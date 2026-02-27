@@ -6,13 +6,13 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:58:38 by icoman            #+#    #+#             */
-/*   Updated: 2026/02/26 18:08:02 by icoman           ###   ########.fr       */
+/*   Updated: 2026/02/27 17:01:25 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+/* int	main(int argc, char **argv)
 {
 	node *st_a;
 	node *st_b;
@@ -35,4 +35,5 @@ int	main(int argc, char **argv)
 	}
 	free(st_a);
 	return (0);
-}
+} */
+

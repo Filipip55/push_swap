@@ -6,7 +6,7 @@
 #    By: icoman <icoman@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 16:43:31 by icoman            #+#    #+#              #
-#    Updated: 2026/02/24 22:48:07 by icoman           ###   ########.fr        #
+#    Updated: 2026/02/27 17:19:51 by icoman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 AR          = ar rcs
 RM          = rm -f
-SRCS        = 
+SRCS        = push_swap.c 
 OBJS        = $(SRCS:.c=.o)
 
 all: $(NAME)

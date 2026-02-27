@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:49:29 by icoman            #+#    #+#             */
-/*   Updated: 2026/02/26 17:53:07 by icoman           ###   ########.fr       */
+/*   Updated: 2026/02/27 17:07:49 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define PUSH_SWAP_H
 # include <stdbool.h>
 # include <limits.h>
-# include "libft/libft.h"
 # include <stdarg.h>
+# include "libft/libft.h"
 
 /*  value -> rappresenta l'intero
 	index -> l'id univoco del nodo

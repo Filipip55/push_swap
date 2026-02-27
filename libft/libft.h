@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:30:56 by icoman            #+#    #+#             */
-/*   Updated: 2026/02/24 23:23:22 by icoman           ###   ########.fr       */
+/*   Updated: 2026/02/27 16:58:41 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 # include <stdio.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdarg.h>
 
-typedef struct s_list
+/* typedef struct s_list
 {
-	int				n;
+	void				*content;
 	struct s_list	*next;
-	struct s_list	*prev;
 }	t_list;
-
+ */
 // Funzioni per i caratteri
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -67,16 +67,23 @@ void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
 
-// Funzioni per le liste
+/* // Funzioni per le liste
 t_list	*ft_lstnew(int n);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
-
-
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *)); */
+
+// Funzioni per ft_printf
+int	ft_printf(const char *str, ...);
+int	put_str(char *s);
+int	put_hex(unsigned int n, char format);
+int	put_ptr(unsigned long long ptr);
+int	ptr_to_hex(unsigned long long n);
+int	put_nbr(long n);
+
 #endif
