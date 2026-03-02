@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:30:56 by icoman            #+#    #+#             */
-/*   Updated: 2026/02/27 16:58:41 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/02 17:40:17 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 // Funzioni di conversione
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
+int		ft_atol(const char *nptr);
 
 /* // Funzioni per le liste
 t_list	*ft_lstnew(int n);

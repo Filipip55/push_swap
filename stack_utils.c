@@ -6,21 +6,18 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:22:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/02/27 16:31:49 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/02 17:45:35 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void init_stack_a(node **st_a)
-{
-	
-}
-
 bool is_stack_sorted(node **stack)
 {
 	node *curr;
 
+	if (!stack || !(*stack))
+		return (true);
 	curr = *stack;
 	while (curr)
 	{
