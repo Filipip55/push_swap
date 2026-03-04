@@ -6,12 +6,14 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 17:56:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/04 12:18:22 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/04 12:32:58 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Ordina lo stack quando ha solo 3 nodi
+	 */
 void	sort_three(node **stack)
 {
 	node	*biggest;
@@ -25,11 +27,7 @@ void	sort_three(node **stack)
 		sa(stack, false);
 }
 
-void	sort_stacks(node **st_a, node **st_b)
-{
-	
-}
-
+/* Trova e restituisce il nodo con il value piu piccolo */
 node	*find_min(node **stack)
 {
 	node	*min;
@@ -48,6 +46,7 @@ node	*find_min(node **stack)
 	return (min);
 }
 
+/* Trova e restituisce il nodo con il value piu grande */
 node	*find_max(node **stack)
 {
 	node	*max;
