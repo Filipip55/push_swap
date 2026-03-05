@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:22:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/05 18:22:48 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/05 21:21:28 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	add_node_front(node **stack, node *new_node)
 }
 
 /* Elimina un nodo */
-void	del_node(node *old_node)
+/* void	del_node(node *old_node)
 {
 	if (!old_node)
 		return ;
@@ -66,4 +66,4 @@ void	del_node(node *old_node)
 	free(old_node->above_half);
 	free(old_node->above_half);
 	free(old_node->above_half);
-}
+} */

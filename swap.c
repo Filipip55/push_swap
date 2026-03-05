@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:04:52 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/05 15:43:58 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/05 21:06:05 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	sb(node **stack)
 void	ss(node **st_a, node **st_b)
 {
 	sa(st_a);
-	sb(st_b);
+	sa(st_b);
 }
