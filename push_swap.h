@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:49:29 by icoman            #+#    #+#             */
-/*   Updated: 2026/02/27 17:07:49 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/05 18:05:44 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,15 @@ typedef struct	s_list
 	struct s_list	*prev;
 } 		node;
 
-
+void	add_node_front(node **stack, node *new_node);
+int 	stack_len(node **stack);
+bool 	is_stack_sorted(node **stack);
+void	sort_three(node **stack);
+node	*find_min(node **stack);
+node	*find_max(node **stack);
+void	del_node(node *old_node);
+void	sa(node **stack);
+void	sb(node **stack);
+void	ss(node **st_a, node **st_b);
 
 #endif

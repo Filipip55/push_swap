@@ -6,13 +6,17 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 17:56:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/04 12:32:58 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/05 14:59:34 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Ordina lo stack quando ha solo 3 nodi
+	- se il piu grande e' in cima, ra (3 2 1 -> 2 1 3)
+	- se il secondo e' il piu grande, rra (2 3 1 -> 1 2 3)
+	- infine controlla se il primo e' maggiore del secondo
+		per eseguire sa (2 1 3 -> 1 2 3)
 	 */
 void	sort_three(node **stack)
 {
