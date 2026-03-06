@@ -66,7 +66,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 // Funzioni di conversione
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
-int		ft_atol(const char *nptr);
+long		ft_atol(const char *nptr);
 
 /* // Funzioni per le liste
 t_list	*ft_lstnew(int n);
