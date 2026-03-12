@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 17:16:18 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/10 21:13:55 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/12 15:21:12 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*  Crea un nuovo nodo e lo mette nell'ultima posizione (coda).
 	Se lo stack e' vuoto allora lo mette in testa */
-static void add_node_back(node **stack, int n)
+static void	add_node_back(node **stack, int n)
 {
 	node	*new_node;
 	node	*last_node;
@@ -41,23 +41,15 @@ static void add_node_back(node **stack, int n)
 	}
 }
 
-/* Inizializza lo stack A con i valori di argv
-	e controlla eventuali errori su quest'ultimi */
-void init_stack_a(node **st_a, char **argv)
+bool check_sintax(char *arg)
 {
-	long n;
-	int i;
+	int	i;
 
-	while (argv[i])
+	i = 0;
+	while (arg[i])
 	{
-		if (!check_sintax(argv[i]))
-			free_errors(st_a);
-		n = ft_atol(argv[i]);
-		if (n > INT_MAX || n < INT_MIN)
-			free_errors(st_a);
-		if (is_duplicate(*st_a, (int)n))
-			free_errors(st_a);
-		add_node_back(st_a, (int)n);
-		i++;
+		if (arg[i] < 48 || arg[i] > 57)
+			return (write(2, "Error\n", 6), false);
 	}
+	return (true);
 }

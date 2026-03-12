@@ -1,0 +1,85 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_a_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/12 15:20:36 by icoman            #+#    #+#             */
+/*   Updated: 2026/03/12 18:04:13 by icoman           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+/* Inizializza lo stack A con i valori di argv
+	e controlla eventuali errori su quest'ultimi */
+void	init_stack_a(node **st_a, char **argv)
+{
+	long n;
+	int i;
+
+	while (argv[i])
+	{
+		if (!check_sintax(argv[i]))
+			free_errors(st_a);
+		n = ft_atol(argv[i]);
+		if (n > INT_MAX || n < INT_MIN)
+			free_errors(st_a);
+		if (is_duplicate(*st_a, (int)n))
+			free_errors(st_a);
+		add_node_back(st_a, (int)n);
+		i++;
+	}
+}
+
+/* Serie di funzioni prelimiari sui nodi di a prima di essere spostati in b */
+void	prepare_nodes_a(node *st_a, node *st_b)
+{
+	update_index(st_a);
+	update_index(st_b);
+	set_target_a(st_a, st_b);
+	set_cost_a(st_a, st_b);
+	set_cheapest(st_a);
+}
+
+/* Trova il target node per i nodi dello stack a
+	Il target node in b e' quello col valore minore piu vicino
+	a quello del nodo a corrente */
+void	set_target_a(node *st_a, node *st_b)
+{
+	node	*curr_b;
+	node	*target;
+	long	min;
+
+	while (st_a)
+	{
+		min = LONG_MIN;
+		curr_b = st_b;
+		while (curr_b)
+		{
+			if (curr_b->value < st_a->value
+				&& curr_b->value > min)
+			{
+				min = curr_b->value;
+				target = curr_b;
+			}
+			curr_b = curr_b->next;
+		}
+		if (min == LONG_MIN)
+			st_a->target = find_max(st_b);
+		else
+			st_a->target = target;
+		st_a = st_a->next;
+	}
+}
+
+void	set_cost_a(node *st_a, node *st_b)
+{
+	int	len_a;
+	int	len_b;
+
+	len_a = stack_len(st_a);
+	len_b = stack_len(st_b);
+	
+}

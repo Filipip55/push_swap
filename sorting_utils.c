@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 17:56:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/05 14:59:34 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/12 15:29:00 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	sort_three(node **stack)
 
 	biggest = find_max(stack);
 	if (biggest == *stack)
-		ra(stack, false);
+		ra(stack, true);
 	else if ((*stack)->next == biggest)
-		rra(stack, false);
+		rra(stack, true);
 	if ((*stack)->value > (*stack)->next->value)
-		sa(stack, false);
+		sa(stack, true);
 }
 
 /* Trova e restituisce il nodo con il value piu piccolo */
@@ -67,4 +67,23 @@ node	*find_max(node **stack)
 		curr = curr->next;
 	}
 	return (max);
+}
+/* Aggiorna index e above_median dei nodi di uno stack */
+void	update_index(node *stack)
+{
+	int	i;
+	int	median;
+
+	if (!stack)
+		return ;
+	median = stack_len(stack) / 2;
+	while (stack)
+	{
+		stack->index = i;
+		if (i++ <= median)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
+		stack = stack->next;
+	}
 }

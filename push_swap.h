@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:49:29 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/05 21:30:09 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/12 15:25:25 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
+# ifdef TO_PRINT
+#  define TO_PRINT 1
+# endif
 /*  value -> rappresenta l'intero
 	index -> l'id univoco del nodo
 	push_cost -> il costo per spostare il nodo
@@ -31,7 +34,7 @@ typedef struct	s_list
 	int				index;
 	int				push_cost;
 	bool			cheapest;
-	bool			above_half;
+	bool			above_median;
 	struct s_list	*target;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -44,10 +47,16 @@ void	sort_three(node **stack);
 node	*find_min(node **stack);
 node	*find_max(node **stack);
 void	del_node(node *old_node);
-void	sa(node **stack);
-void	sb(node **stack);
-void	ss(node **st_a, node **st_b);
-void	pa(node **st_a, node **st_b);
-void	pb(node **st_a, node **st_b);
+void	swap(node **stack);
+void	sa(node **stack, bool to_print);
+void	sb(node **stack, bool to_print);
+void	ss(node **st_a, node **st_b, bool to_print);
+void	pa(node **st_a, node **st_b, bool to_print);
+void	pb(node **st_a, node **st_b, bool to_print);
+void	rotate(node **stack);
+void	ra(node **stack, bool to_print);
+void	rb(node **stack, bool to_print);
+void	rr(node **stack, bool to_print);
+
 
 #endif

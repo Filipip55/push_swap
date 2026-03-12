@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:58:38 by icoman            #+#    #+#             */
-/*   Updated: 2026/02/27 17:59:02 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/10 21:46:00 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ int	main(int argc, char **argv)
 
 	st_a = NULL;
 	st_b = NULL;
-	if (argc < 2 || !argv[1][0])
-		return (write(2, "Error\n", 6), 1);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' '); //non e' lo stesso split, modificala e usa una variabile statica per tenere traccis di dove sei arrivato
-	init_stack_a(&st_a);
+	if (argc < 2)
+		return (1);
+	init_stack_a(&st_a, argv);
 	if (!is_stack_sorted(st_a))
 	{
 		if (stack_len(st_a) == 2)
