@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:49:29 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/12 15:25:25 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/12 22:11:42 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 /*  value -> rappresenta l'intero
 	index -> l'id univoco del nodo
 	push_cost -> il costo per spostare il nodo
-	cheapest -> true se ha il costo piu basso
+	is_cheapest -> true se ha il costo piu basso
 	above_half -> true se il nodo si trova nella 
 				prima meta dello stack 
 	target -> nodo a cui puntare nello spostamento
@@ -33,7 +33,7 @@ typedef struct	s_list
 	int				value;
 	int				index;
 	int				push_cost;
-	bool			cheapest;
+	bool			is_cheapest;
 	bool			above_median;
 	struct s_list	*target;
 	struct s_list	*next;

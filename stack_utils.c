@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:22:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/05 21:21:28 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/12 22:11:42 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	add_node_front(node **stack, node *new_node)
 	if (!old_node)
 		return ;
 	free(old_node->above_half);
-	free(old_node->cheapest);
+	free(old_node->is_cheapest);
 	free(old_node->index);
 	free(old_node->);
 	free(old_node->above_half);

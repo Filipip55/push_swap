@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:20:36 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/12 18:04:13 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/12 22:11:42 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	prepare_nodes_a(node *st_a, node *st_b)
 	update_index(st_b);
 	set_target_a(st_a, st_b);
 	set_cost_a(st_a, st_b);
-	set_cheapest(st_a);
+	set_is_cheapest(st_a);
 }
 
 /* Trova il target node per i nodi dello stack a
@@ -74,6 +74,11 @@ void	set_target_a(node *st_a, node *st_b)
 	}
 }
 
+/* Calcola il costo dello spostare i nodi di A in B tramite pb.
+	Nell'effettivo calcola quante mosse servono per farlo arrivare alla cima di A
+	tramite ra (se above_median == true) oppure rra (se above_median == false).
+	Per uno spostamento corretto anche il target node deve esser in cima a B
+	e si applica la stessa logica (stavolta con rb, rrb). */
 void	set_cost_a(node *st_a, node *st_b)
 {
 	int	len_a;
@@ -81,5 +86,15 @@ void	set_cost_a(node *st_a, node *st_b)
 
 	len_a = stack_len(st_a);
 	len_b = stack_len(st_b);
-	
+	while (st_a)
+	{
+		st_a->push_cost = st_a->index;
+		if (!(st_a->above_median))
+			st_a->push_cost = len_a - (st_a->index);
+		if (st_a->target->above_median)
+			st_a->push_cost += st_a->target->index;
+		else
+			st_a->push_cost += len_b - (st_a->target->index);
+		st_a = st_a->next;
+	}
 }
