@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:22:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/12 22:11:42 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/15 13:52:19 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,25 +45,54 @@ int stack_len(node **stack)
 	return (len);
 }
 
-/* Aggiunge un nodo in cima allo stack */
-void	add_node_front(node **stack, node *new_node)
+/* Trova e restituisce il nodo più "economico" */
+node	*get_cheapest(node *stack)
 {
-	if (!stack || !new_node)
-		return ;
-	new_node->next = *stack;
-	*stack = new_node;
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->is_cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }
 
-/* Elimina un nodo */
-/* void	del_node(node *old_node)
+/* Trova e restituisce il nodo con il value piu piccolo. */
+node	*find_min(node **stack)
 {
-	if (!old_node)
-		return ;
-	free(old_node->above_half);
-	free(old_node->is_cheapest);
-	free(old_node->index);
-	free(old_node->);
-	free(old_node->above_half);
-	free(old_node->above_half);
-	free(old_node->above_half);
-} */
+	node	*min;
+	node	*curr;
+
+	if (!stack || !(*stack))
+		return (NULL);
+	curr = *stack;
+	min = *stack;
+	while (curr->next)
+	{
+		if (min->value > curr->value)
+			min = curr;
+		curr = curr->next;
+	}
+	return (min);
+}
+
+/* Trova e restituisce il nodo con il value piu grande. */
+node	*find_max(node **stack)
+{
+	node	*max;
+	node	*curr;
+
+	if (!stack || !(*stack))
+		return (NULL);
+	curr = *stack;
+	max = *stack;
+	while (curr->next)
+	{
+		if (max->value < curr->value)
+			max = curr;
+		curr = curr->next;
+	}
+	return (max);
+}

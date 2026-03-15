@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 21:22:15 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/12 22:22:08 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/15 13:56:40 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,14 @@ void	sort_stacks(node **st_a, node **st_b)
 	move_min_on_top(st_a);
 }
 
-void	move_a_to_b(node *st_a, node *st_b)
+void	move_a_to_b(node **st_a, node **st_b)
 {
+	node	*cheapest;
+
+	cheapest = get_cheapest(*st_a);
+	if (cheapest->above_median && cheapest->target->above_median)
+		rotate_both(st_a, st_b, cheapest);
+	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
+		reverse_rotate_both(st_a, st_b, cheapest);
 	
 }
