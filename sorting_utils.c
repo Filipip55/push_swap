@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 17:56:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/15 13:52:02 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/16 22:29:25 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,19 @@ void	set_is_cheapest(node *stack)
 		stack = stack->next;
 	}
 	cheapest_node->is_cheapest = true;
+}
+
+/* Muove il nodo da spostare nell'altro stack in cima a quello stack
+	in base alle funzioni passate (ra, rra oppure rb, rrb) */
+void	prep_for_push(node **stack, node *new_top,
+						void (*f_rr)(node **, bool),
+						void (*f_rrr)(node **, bool))
+{
+	while (*stack != new_top)
+	{
+		if (new_top->above_median)
+			f_rr(stack, true);
+		else
+			f_rrr(stack, true);
+	}
 }

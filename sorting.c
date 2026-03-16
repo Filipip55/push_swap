@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 21:22:15 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/15 13:56:40 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/16 22:31:32 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void	sort_stacks(node **st_a, node **st_b)
 	update_index(*st_a);
 	move_min_on_top(st_a);
 }
-
+/* Funzione helper per spostare il nodo in cima ad A in B, controlla
+	se fare rr o rrr sia piu' economico  */
 void	move_a_to_b(node **st_a, node **st_b)
 {
 	node	*cheapest;
@@ -64,5 +65,7 @@ void	move_a_to_b(node **st_a, node **st_b)
 		rotate_both(st_a, st_b, cheapest);
 	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
 		reverse_rotate_both(st_a, st_b, cheapest);
-	
+	prep_for_push(st_a, cheapest, &ra, &rra);
+	prep_for_push(st_b, cheapest, &rb, &rrb);
+	pb(st_a, st_b, true);
 }
