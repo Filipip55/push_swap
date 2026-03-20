@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 17:16:18 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/12 15:21:12 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/20 20:16:02 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	add_node_back(node **stack, int n)
 	node	*last_node;
 
 	if (!stack)
-		return (free(stack), NULL);
+		return (free(stack));
 	new_node = malloc(sizeof(node));
 	if (!new_node)
 		return (free(new_node), NULL);

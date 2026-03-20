@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:49:29 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/12 22:11:42 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/20 20:11:57 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct	s_list
 	struct s_list	*prev;
 } 		node;
 
+static void	add_node_back(node **stack, int n);
 void	add_node_front(node **stack, node *new_node);
 int 	stack_len(node **stack);
 bool 	is_stack_sorted(node **stack);
@@ -57,6 +58,6 @@ void	rotate(node **stack);
 void	ra(node **stack, bool to_print);
 void	rb(node **stack, bool to_print);
 void	rr(node **stack, bool to_print);
-
+void	rotate_both(node **st_a, node **st_b, node *cheapest);
 
 #endif

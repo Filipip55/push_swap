@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 21:22:15 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/16 22:31:32 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/20 20:01:55 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,21 @@ void	move_a_to_b(node **st_a, node **st_b)
 	prep_for_push(st_a, cheapest, &ra, &rra);
 	prep_for_push(st_b, cheapest, &rb, &rrb);
 	pb(st_a, st_b, true);
+}
+
+/* Sposta il nodo col valore minimo in testa allo stack A
+	e' l'ultimo passaggio dell'ordinamento */
+static void	move_min_on_top(node **st_a)
+{
+	node	*min;
+
+	min = find_min(st_a);
+	while (st_a != min)
+	{
+		if (min->above_median)
+			ra(st_a, true);
+		else
+			rra(st_a, true);
+		min = find_min(st_a);
+	}
 }
