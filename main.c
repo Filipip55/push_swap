@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:58:38 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/10 21:46:00 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/27 22:32:59 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	if (!is_stack_sorted(st_a))
 	{
 		if (stack_len(st_a) == 2)
-			sa(&st_a, false);
+			sa(&st_a);
 		else if (stack_len(st_a) == 3)
 			sort_three(&st_a);
 		else

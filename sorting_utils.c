@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 17:56:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/16 22:29:25 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/27 22:54:43 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	update_index(node *stack)
 }
 /* Controlla quale nodo ha il push_cost minore e lo imposta come quello
 	più "economico" da spostare nell'altro stack. */
-void	set_is_cheapest(node *stack)
+void	set_cheapest(node *stack)
 {
 	long	cheapest;
 	node	*cheapest_node;

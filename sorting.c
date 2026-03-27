@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 21:22:15 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/20 20:01:55 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/27 23:26:58 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	sort_three(node **stack)
 {
 	node	*biggest;
 
-	biggest = find_max(stack);
+	biggest = get_max_node(stack);
 	if (biggest == *stack)
-		ra(stack, true);
+		ra(stack);
 	else if ((*stack)->next == biggest)
-		rra(stack, true);
+		rra(stack);
 	if ((*stack)->value > (*stack)->next->value)
-		sa(stack, true);
+		sa(stack);
 }
 
 void	sort_stacks(node **st_a, node **st_b)
@@ -37,9 +37,9 @@ void	sort_stacks(node **st_a, node **st_b)
 
 	len_a = stack_len(st_a);
 	if (len_a-- > 3 && !is_stack_sorted(st_a))
-		pb(st_a, st_b, true);
+		pb(st_a, st_b);
 	if (len_a-- > 3 && !is_stack_sorted(st_a))
-		pb(st_a, st_b, true);
+		pb(st_a, st_b);
 	while (len_a-- > 3 && !is_stack_sorted(st_a))
 	{
 		prepare_nodes_a(st_a, st_b);
@@ -54,21 +54,6 @@ void	sort_stacks(node **st_a, node **st_b)
 	update_index(*st_a);
 	move_min_on_top(st_a);
 }
-/* Funzione helper per spostare il nodo in cima ad A in B, controlla
-	se fare rr o rrr sia piu' economico  */
-void	move_a_to_b(node **st_a, node **st_b)
-{
-	node	*cheapest;
-
-	cheapest = get_cheapest(*st_a);
-	if (cheapest->above_median && cheapest->target->above_median)
-		rotate_both(st_a, st_b, cheapest);
-	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
-		reverse_rotate_both(st_a, st_b, cheapest);
-	prep_for_push(st_a, cheapest, &ra, &rra);
-	prep_for_push(st_b, cheapest, &rb, &rrb);
-	pb(st_a, st_b, true);
-}
 
 /* Sposta il nodo col valore minimo in testa allo stack A
 	e' l'ultimo passaggio dell'ordinamento */
@@ -76,13 +61,13 @@ static void	move_min_on_top(node **st_a)
 {
 	node	*min;
 
-	min = find_min(st_a);
+	min = get_min_node(st_a);
 	while (st_a != min)
 	{
 		if (min->above_median)
-			ra(st_a, true);
+			ra(st_a);
 		else
-			rra(st_a, true);
-		min = find_min(st_a);
+			rra(st_a);
+		min = get_min_node(st_a);
 	}
 }

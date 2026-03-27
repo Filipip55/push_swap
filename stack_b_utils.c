@@ -6,14 +6,14 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 22:32:17 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/20 19:33:57 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/27 23:22:39 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Serie di funzioni prelimiari sui nodi di b prima di essere spostati in a */
-void	prepare_nodes_a(node *st_a, node *st_b)
+void	prepare_nodes_b(node *st_a, node *st_b)
 {
 	update_index(st_a);
 	update_index(st_b);
@@ -41,7 +41,7 @@ void	set_target_b(node *st_a, node *st_b)
 			curr_a = curr_a->next;
 		}
 		if (max == LONG_MAX)
-			st_b->target = find_min(st_a);
+			st_b->target = get_min_node(st_a);
 		else
 			st_b->target = target;
 		st_b = st_b->next;
@@ -51,5 +51,5 @@ void	set_target_b(node *st_a, node *st_b)
 static void	move_b_to_a(node **st_a, node **st_b)
 {
 	prep_for_push(st_a, (*st_b)->target, &ra, &rra);
-	pa(st_a, st_b, true);
+	pa(st_a, st_b);
 }

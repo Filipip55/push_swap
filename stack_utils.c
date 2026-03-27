@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:22:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/15 13:52:19 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/27 22:55:19 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ node	*get_cheapest(node *stack)
 }
 
 /* Trova e restituisce il nodo con il value piu piccolo. */
-node	*find_min(node **stack)
+node	*get_min_node(node **stack)
 {
 	node	*min;
 	node	*curr;
@@ -79,7 +79,7 @@ node	*find_min(node **stack)
 }
 
 /* Trova e restituisce il nodo con il value piu grande. */
-node	*find_max(node **stack)
+node	*get_max_node(node **stack)
 {
 	node	*max;
 	node	*curr;

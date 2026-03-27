@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:20:36 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/12 22:11:42 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/27 23:27:11 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	prepare_nodes_a(node *st_a, node *st_b)
 	update_index(st_b);
 	set_target_a(st_a, st_b);
 	set_cost_a(st_a, st_b);
-	set_is_cheapest(st_a);
+	set_cheapest(st_a);
 }
 
 /* Trova il target node per i nodi dello stack a
@@ -67,7 +67,7 @@ void	set_target_a(node *st_a, node *st_b)
 			curr_b = curr_b->next;
 		}
 		if (min == LONG_MIN)
-			st_a->target = find_max(st_b);
+			st_a->target = get_max_node(st_b);
 		else
 			st_a->target = target;
 		st_a = st_a->next;
@@ -97,4 +97,20 @@ void	set_cost_a(node *st_a, node *st_b)
 			st_a->push_cost += len_b - (st_a->target->index);
 		st_a = st_a->next;
 	}
+}
+
+/* Funzione helper per spostare il nodo in cima ad A in B, controlla
+	se fare rr o rrr sia piu' economico  */
+void	move_a_to_b(node **st_a, node **st_b)
+{
+	node	*cheapest;
+
+	cheapest = get_cheapest(*st_a);
+	if (cheapest->above_median && cheapest->target->above_median)
+		keep_rotating(st_a, st_b, cheapest);
+	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
+		reverse_keep_rotating(st_a, st_b, cheapest);
+	prep_for_push(st_a, cheapest, &ra, &rra);
+	prep_for_push(st_b, cheapest, &rb, &rrb);
+	pb(st_a, st_b);
 }
