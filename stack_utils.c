@@ -6,16 +6,16 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:22:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/27 22:55:19 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 15:06:50 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Controlla che i nodi dello stack siano ordinati in ordine crescente */
-bool is_stack_sorted(node **stack)
+bool is_stack_sorted(t_node **stack)
 {
-	node *curr;
+	t_node *curr;
 
 	if (!stack || !(*stack))
 		return (true);
@@ -30,10 +30,10 @@ bool is_stack_sorted(node **stack)
 }
 
 /* Restituisce il numero di nodi in uno stack */
-int stack_len(node **stack)
+int stack_len(t_node **stack)
 {
 	int len;
-	node *curr;
+	t_node *curr;
 
 	len = 0;
 	curr = *stack;
@@ -46,7 +46,7 @@ int stack_len(node **stack)
 }
 
 /* Trova e restituisce il nodo più "economico" */
-node	*get_cheapest(node *stack)
+t_node	*get_cheapest(t_node *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -60,10 +60,10 @@ node	*get_cheapest(node *stack)
 }
 
 /* Trova e restituisce il nodo con il value piu piccolo. */
-node	*get_min_node(node **stack)
+t_node	*get_min_node(t_node **stack)
 {
-	node	*min;
-	node	*curr;
+	t_node	*min;
+	t_node	*curr;
 
 	if (!stack || !(*stack))
 		return (NULL);
@@ -79,10 +79,10 @@ node	*get_min_node(node **stack)
 }
 
 /* Trova e restituisce il nodo con il value piu grande. */
-node	*get_max_node(node **stack)
+t_node	*get_max_node(t_node **stack)
 {
-	node	*max;
-	node	*curr;
+	t_node	*max;
+	t_node	*curr;
 
 	if (!stack || !(*stack))
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 21:22:15 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/27 23:26:58 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 15:04:34 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 	- infine controlla se il primo e' maggiore del secondo
 		per eseguire sa (2 1 3 -> 1 2 3)
 	 */
-void	sort_three(node **stack)
+void	sort_three(t_node **stack)
 {
-	node	*biggest;
+	t_node	*biggest;
 
 	biggest = get_max_node(stack);
 	if (biggest == *stack)
@@ -31,7 +31,7 @@ void	sort_three(node **stack)
 		sa(stack);
 }
 
-void	sort_stacks(node **st_a, node **st_b)
+void	sort_stacks(t_node **st_a, t_node **st_b)
 {
 	int	len_a;
 
@@ -57,9 +57,9 @@ void	sort_stacks(node **st_a, node **st_b)
 
 /* Sposta il nodo col valore minimo in testa allo stack A
 	e' l'ultimo passaggio dell'ordinamento */
-static void	move_min_on_top(node **st_a)
+static void	move_min_on_top(t_node **st_a)
 {
-	node	*min;
+	t_node	*min;
 
 	min = get_min_node(st_a);
 	while (st_a != min)

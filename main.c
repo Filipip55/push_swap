@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:58:38 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/27 22:32:59 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 15:07:10 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	node	*st_a;
-	node	*st_b;
+	t_node	*st_a;
+	t_node	*st_b;
 
 	st_a = NULL;
 	st_b = NULL;

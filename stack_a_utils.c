@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:20:36 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/27 23:27:11 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 15:05:30 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* Inizializza lo stack A con i valori di argv
 	e controlla eventuali errori su quest'ultimi */
-void	init_stack_a(node **st_a, char **argv)
+void	init_stack_a(t_node **st_a, char **argv)
 {
 	long n;
 	int i;
@@ -34,7 +34,7 @@ void	init_stack_a(node **st_a, char **argv)
 }
 
 /* Serie di funzioni prelimiari sui nodi di a prima di essere spostati in b */
-void	prepare_nodes_a(node *st_a, node *st_b)
+void	prepare_nodes_a(t_node *st_a, t_node *st_b)
 {
 	update_index(st_a);
 	update_index(st_b);
@@ -46,10 +46,10 @@ void	prepare_nodes_a(node *st_a, node *st_b)
 /* Trova il target node per i nodi dello stack a
 	Il target node in b e' quello col valore minore piu vicino
 	a quello del nodo a corrente */
-void	set_target_a(node *st_a, node *st_b)
+void	set_target_a(t_node *st_a, t_node *st_b)
 {
-	node	*curr_b;
-	node	*target;
+	t_node	*curr_b;
+	t_node	*target;
 	long	min;
 
 	while (st_a)
@@ -79,7 +79,7 @@ void	set_target_a(node *st_a, node *st_b)
 	tramite ra (se above_median == true) oppure rra (se above_median == false).
 	Per uno spostamento corretto anche il target node deve esser in cima a B
 	e si applica la stessa logica (stavolta con rb, rrb). */
-void	set_cost_a(node *st_a, node *st_b)
+void	set_cost_a(t_node *st_a, t_node *st_b)
 {
 	int	len_a;
 	int	len_b;
@@ -101,9 +101,9 @@ void	set_cost_a(node *st_a, node *st_b)
 
 /* Funzione helper per spostare il nodo in cima ad A in B, controlla
 	se fare rr o rrr sia piu' economico  */
-void	move_a_to_b(node **st_a, node **st_b)
+void	move_a_to_b(t_node **st_a, t_node **st_b)
 {
-	node	*cheapest;
+	t_node	*cheapest;
 
 	cheapest = get_cheapest(*st_a);
 	if (cheapest->above_median && cheapest->target->above_median)

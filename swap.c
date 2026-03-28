@@ -6,17 +6,17 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:04:52 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/10 02:07:19 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 15:07:02 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Scambia di posizione i primi elementi di uno stack */
-void	swap(node **stack)
+void	swap(t_node **stack)
 {
-	node	*first;
-	node	*second;
+	t_node	*first;
+	t_node	*second;
 
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
@@ -27,21 +27,21 @@ void	swap(node **stack)
 	*stack = second;
 }
 
-void	sa(node **stack, bool to_print)
+void	sa(t_node **stack, bool to_print)
 {
 	swap(stack);
 	if (to_print)
 		return (ft_printf("sa\n"));
 }
 
-void	sb(node **stack, bool to_print)
+void	sb(t_node **stack, bool to_print)
 {
 	swap(stack);
 	if (to_print)
 		return (ft_printf("sb\n"));
 }
 
-void	ss(node **st_a, node **st_b, bool to_print)
+void	ss(t_node **st_a, t_node **st_b, bool to_print)
 {
 	swap(st_a);
 	swap(st_b);

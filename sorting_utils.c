@@ -6,14 +6,14 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 17:56:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/27 22:54:43 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 15:04:02 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Aggiorna index e above_median dei nodi di uno stack. */
-void	update_index(node *stack)
+void	update_index(t_node *stack)
 {
 	int	i;
 	int	median;
@@ -33,10 +33,10 @@ void	update_index(node *stack)
 }
 /* Controlla quale nodo ha il push_cost minore e lo imposta come quello
 	più "economico" da spostare nell'altro stack. */
-void	set_cheapest(node *stack)
+void	set_cheapest(t_node *stack)
 {
 	long	cheapest;
-	node	*cheapest_node;
+	t_node	*cheapest_node;
 
 	if (!stack)
 		return ;
@@ -55,9 +55,9 @@ void	set_cheapest(node *stack)
 
 /* Muove il nodo da spostare nell'altro stack in cima a quello stack
 	in base alle funzioni passate (ra, rra oppure rb, rrb) */
-void	prep_for_push(node **stack, node *new_top,
-						void (*f_rr)(node **, bool),
-						void (*f_rrr)(node **, bool))
+void	prep_for_push(t_node **stack, t_node *new_top,
+						void (*f_rr)(t_node **, bool),
+						void (*f_rrr)(t_node **, bool))
 {
 	while (*stack != new_top)
 	{
