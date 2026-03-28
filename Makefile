@@ -6,7 +6,7 @@
 #    By: icoman <icoman@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 16:43:31 by icoman            #+#    #+#              #
-#    Updated: 2026/02/27 17:19:51 by icoman           ###   ########.fr        #
+#    Updated: 2026/03/28 17:29:24 by icoman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 AR          = ar rcs
 RM          = rm -f
-SRCS        = push_swap.c 
+SRCS        = reverse_rotate.c sorting.c stack_a_utils.c stack_utils.c error_management.c\
+				main.c push.c rotate.c sorting_utils.c stack_b_utils.c swap.c
 OBJS        = $(SRCS:.c=.o)
 
 all: $(NAME)

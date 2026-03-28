@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:49:29 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:18:16 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 17:37:52 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ typedef struct s_node
     struct s_node   *next;
 }   t_node;
 
-static void	add_node_back(t_node **stack, int n);
+void	add_node_back(t_node **stack, int n);
 
 // sorting
 void		sort_stacks(t_node **st_a, t_node **st_b);
-static void	move_min_on_top(t_node **st_a);
+void	move_min_on_top(t_node **st_a);
 void		sort_three(t_node **stack);
 
 // sorting utils
@@ -51,6 +51,12 @@ void		prep_for_push(t_node **stack, t_node *new_top,
 						void (*f_rr)(t_node **, bool),
 						void (*f_rrr)(t_node **, bool));
 bool		check_sintax(char *arg);
+
+// error management
+bool	check_sintax(char *str_n);
+bool	is_duplicate(t_node *node, int n);
+void	free_stack(t_node **stack);
+void	free_errors(t_node **stack);
 
 // common stack utils
 int 		stack_len(t_node **stack);
@@ -69,7 +75,7 @@ void		move_a_to_b(t_node **st_a, t_node **st_b);
 // stack B utils
 void		prepare_nodes_b(t_node *st_a, t_node *st_b);
 void		set_target_b(t_node *st_a, t_node *st_b);
-static void	move_b_to_a(t_node **st_a, t_node **st_b);
+void	move_b_to_a(t_node **st_a, t_node **st_b);
 
 // swap
 void		swap(t_node **stack);

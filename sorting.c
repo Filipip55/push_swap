@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 21:22:15 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:04:34 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 17:32:18 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	sort_stacks(t_node **st_a, t_node **st_b)
 
 /* Sposta il nodo col valore minimo in testa allo stack A
 	e' l'ultimo passaggio dell'ordinamento */
-static void	move_min_on_top(t_node **st_a)
+void	move_min_on_top(t_node **st_a)
 {
 	t_node	*min;
 
