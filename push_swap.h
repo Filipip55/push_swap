@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:49:29 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:00:26 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 15:18:16 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include "libft/libft.h"
 
 /*  value -> rappresenta l'intero
-	index -> l'id univoco del nodo
+	index -> l'id univoco del nodo 
+			(utile per calcolare il costo di spostamento da uno stack all'altro)
 	push_cost -> il costo per spostare il nodo
 	is_cheapest -> true se ha il costo piu basso
 	above_half -> true se il nodo si trova nella 

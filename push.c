@@ -6,31 +6,36 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:44:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:03:04 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 15:27:35 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_node **st_a, t_node **st_b)
+/* dest = puntatore allo stack di destinazione
+	src = puntatore allo stack di origine (da cui togliamo il nodo) */
+void	push(t_node **dest, t_node **src)
 {
-	if (!st_a || !st_b || !(*st_b))
+	t_node	*node_to_push;
+
+	if (!dest || !src || !(*src))
 		return ;
-	
+	node_to_push = *src;
+	*src = (*src)->next;
+	node_to_push->next = *dest;
+	*dest = node_to_push;
 }
 
-/* push a): Take the first element at the top of b and put it at the top of a.
-	Do nothing if b is empty. */
+/* Prende il primo elemento in cima a B e lo mette in cima ad A. */
 void	pa(t_node **st_a, t_node **st_b)
 {
-	
-	printf("pa\n");
+	push(st_a, st_b);
+	ft_printf("pa\n");
 }
 
-/* (push b): Take the first element at the top of a and put it at the top of b.
-	Do nothing if a is empty. */
+/* Prende il primo elemento in cima ad A e lo mette in cima a B. */
 void	pb(t_node **st_a, t_node **st_b)
 {
-	
-	printf("pb\n");
+	push(st_b, st_a);
+	ft_printf("pb\n");
 }

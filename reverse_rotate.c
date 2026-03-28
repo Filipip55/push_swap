@@ -6,34 +6,51 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 21:46:38 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:03:20 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 15:47:32 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+#include "push_swap.h"
+
+/* Sposta gli elementi verso il basso, l'ultimo diventa il primo */
 void	reverse_rotate(t_node **stack)
 {
-	
+	t_node	*last;
+	t_node	*second_last;
+
+	if (!stack || !*stack || !(*stack)->next)
+		return ;
+	last = *stack;
+	second_last = NULL;
+	while (last->next)
+	{
+		second_last = last;
+		last = last->next;
+	}
+	second_last->next = NULL;
+	last->next = *stack;
+	*stack = last;
 }
 
 void	rra(t_node **st_a)
 {
 	reverse_rotate(st_a);
-	printf("rra\n");
+	ft_printf("rra\n");
 }
 
 void	rrb(t_node **st_b)
 {
 	reverse_rotate(st_b);
-	printf("rrb\n");
+	ft_printf("rrb\n");
 }
 
 void	rrr(t_node **st_a, t_node **st_b)
 {
 	reverse_rotate(st_a);
 	reverse_rotate(st_b);
-	printf("rrr\n");
+	ft_printf("rrr\n");
 }
 
 /* Esegue rrr finche' il nodo piu' economico da spostare di A e' in cima

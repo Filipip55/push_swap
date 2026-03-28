@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 18:08:57 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:03:41 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 15:40:13 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ void	rotate(t_node **stack)
 		return;
 	first = *stack;
 	last = *stack;
-	while (last->next != NULL)
-	{
+	while (last->next)
 		last = last->next;
-	}
 	*stack = first->next;
 	last->next = first;
 	first->next = NULL;
