@@ -6,19 +6,20 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:20:36 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:05:30 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 17:25:43 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Inizializza lo stack A con i valori di argv
-	e controlla eventuali errori su quest'ultimi */
+	e controlla la presenza di eventuali errori su quest'ultimi */
 void	init_stack_a(t_node **st_a, char **argv)
 {
 	long n;
 	int i;
 
+	i = 1;
 	while (argv[i])
 	{
 		if (!check_sintax(argv[i]))

@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:58:38 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:07:10 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/28 17:20:34 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,52 @@ int	main(int argc, char **argv)
 	free(st_a);
 	free(st_b);
 	return (0);
+}
+
+/*  Crea un nuovo nodo e lo mette nell'ultima posizione (coda).
+	Se lo stack e' vuoto allora lo mette in testa */
+static void	add_node_back(t_node **stack, int n)
+{
+	t_node	*new_node;
+	t_node	*last_node;
+
+	if (!stack)
+		return (free(stack));
+	new_node = malloc(sizeof(t_node));
+	if (!new_node)
+		return (free(new_node), NULL);
+	new_node->next = NULL;
+	new_node->value = n;
+	if(!(*stack))
+		*stack = new_node;
+	else
+	{
+		last_node = *stack;
+		while (!last_node->next)
+			last_node = last_node->next;
+		last_node->next = new_node;
+	}
+}
+
+void	add_node_back(t_node **stack, int n)
+{
+	t_node	*new_node;
+	t_node	*last;
+
+	if (!stack)
+		return ;
+	new_node = malloc(sizeof(t_node));
+	if (!new_node)
+		return ;
+	new_node->next = NULL;
+	new_node->value = n;
+	if (!(*stack))
+	{
+		*stack = new_node;
+		return ;
+	}
+	last = *stack;
+	while (last->next)
+		last = last->next;
+	last->next = new_node;
 }
