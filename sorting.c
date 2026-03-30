@@ -42,13 +42,13 @@ void	sort_stacks(t_node **st_a, t_node **st_b)
 		pb(st_a, st_b);
 	while (len_a-- > 3 && !is_stack_sorted(st_a))
 	{
-		prepare_nodes_a(st_a, st_b);
+		prepare_nodes_a(*st_a, *st_b);
 		move_a_to_b(st_a, st_b);
 	}
 	sort_three(st_a);
-	while (st_b)
+	while (*st_b)
 	{
-		prepare_nodes_b(st_a, st_a);
+		prepare_nodes_b(*st_a, *st_b);
 		move_b_to_a(st_a, st_b);
 	}
 	update_index(*st_a);
@@ -62,7 +62,7 @@ void	move_min_on_top(t_node **st_a)
 	t_node	*min;
 
 	min = get_min_node(st_a);
-	while (st_a != min)
+	while (*st_a != min)
 	{
 		if (min->above_median)
 			ra(st_a);

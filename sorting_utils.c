@@ -20,6 +20,7 @@ void	update_index(t_node *stack)
 
 	if (!stack)
 		return ;
+	i = 0;
 	median = stack_len(stack) / 2;
 	while (stack)
 	{
@@ -40,7 +41,8 @@ void	set_cheapest(t_node *stack)
 
 	if (!stack)
 		return ;
-	cheapest = LONG_MIN;
+	cheapest = LONG_MAX;
+	cheapest_node = NULL;
 	while (stack)
 	{
 		if (stack->push_cost < cheapest)
@@ -50,14 +52,15 @@ void	set_cheapest(t_node *stack)
 		}
 		stack = stack->next;
 	}
-	cheapest_node->is_cheapest = true;
+	if (cheapest_node)
+		cheapest_node->is_cheapest = true;
 }
 
 /* Muove il nodo da spostare nell'altro stack in cima a quello stack
 	in base alle funzioni passate (ra, rra oppure rb, rrb) */
 void	prep_for_push(t_node **stack, t_node *new_top,
-						void (*f_rr)(t_node **, bool),
-						void (*f_rrr)(t_node **, bool))
+						void (*f_rr)(t_node **),
+						void (*f_rrr)(t_node **))
 {
 	while (*stack != new_top)
 	{

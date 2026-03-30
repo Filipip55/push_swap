@@ -13,13 +13,13 @@
 #include "push_swap.h"
 
 /* Controlla che i nodi dello stack siano ordinati in ordine crescente */
-bool is_stack_sorted(t_node **stack)
+bool is_stack_sorted(t_node *stack)
 {
-	t_node *curr;
+	t_node	*curr;
 
-	if (!stack || !(*stack))
+	if (!stack)
 		return (true);
-	curr = *stack;
+	curr = stack;
 	while (curr)
 	{
 		if (curr->next && curr->value > curr->next->value)
@@ -30,13 +30,13 @@ bool is_stack_sorted(t_node **stack)
 }
 
 /* Restituisce il numero di nodi in uno stack */
-int stack_len(t_node **stack)
+int stack_len(t_node *stack)
 {
-	int len;
-	t_node *curr;
+	int		len;
+	t_node	*curr;
 
 	len = 0;
-	curr = *stack;
+	curr = stack;
 	while (curr)
 	{
 		len++;
@@ -60,16 +60,16 @@ t_node	*get_cheapest(t_node *stack)
 }
 
 /* Trova e restituisce il nodo con il value piu piccolo. */
-t_node	*get_min_node(t_node **stack)
+t_node	*get_min_node(t_node *stack)
 {
 	t_node	*min;
 	t_node	*curr;
 
-	if (!stack || !(*stack))
+	if (!stack)
 		return (NULL);
-	curr = *stack;
-	min = *stack;
-	while (curr->next)
+	curr = stack;
+	min = stack;
+	while (curr)
 	{
 		if (min->value > curr->value)
 			min = curr;
@@ -79,16 +79,16 @@ t_node	*get_min_node(t_node **stack)
 }
 
 /* Trova e restituisce il nodo con il value piu grande. */
-t_node	*get_max_node(t_node **stack)
+t_node	*get_max_node(t_node *stack)
 {
 	t_node	*max;
 	t_node	*curr;
 
-	if (!stack || !(*stack))
+	if (!stack)
 		return (NULL);
-	curr = *stack;
-	max = *stack;
-	while (curr->next)
+	curr = stack;
+	max = stack;
+	while (curr)
 	{
 		if (max->value < curr->value)
 			max = curr;

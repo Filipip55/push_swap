@@ -48,8 +48,8 @@ void		sort_three(t_node **stack);
 void		update_index(t_node *stack);
 void		set_cheapest(t_node *stack);
 void		prep_for_push(t_node **stack, t_node *new_top,
-						void (*f_rr)(t_node **, bool),
-						void (*f_rrr)(t_node **, bool));
+						void (*f_rr)(t_node **),
+						void (*f_rrr)(t_node **));
 bool		check_sintax(char *arg);
 
 // error management
@@ -59,11 +59,11 @@ void	free_stack(t_node **stack);
 void	free_errors(t_node **stack);
 
 // common stack utils
-int 		stack_len(t_node **stack);
-bool 		is_stack_sorted(t_node **stack);
+int 		stack_len(t_node *stack);
+bool 		is_stack_sorted(t_node *stack);
 t_node		*get_cheapest(t_node *stack);
-t_node		*get_min_node(t_node **stack);
-t_node		*get_max_node(t_node **stack);
+t_node		*get_min_node(t_node *stack);
+t_node		*get_max_node(t_node *stack);
 
 // stack A utils
 void		init_stack_a(t_node **st_a, char **argv);
