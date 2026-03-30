@@ -92,7 +92,7 @@ void		pb(t_node **st_a, t_node **st_b);
 void		rotate(t_node **stack);
 void		ra(t_node **stack);
 void		rb(t_node **stack);
-void		rr(t_node **stack);
+void		rr(t_node **st_a, t_node **st_b);
 void		keep_rotating(t_node **st_a, t_node **st_b, t_node *cheapest);
 
 // reverse rotate

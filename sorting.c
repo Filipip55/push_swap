@@ -22,7 +22,7 @@ void	sort_three(t_node **stack)
 {
 	t_node	*biggest;
 
-	biggest = get_max_node(stack);
+	biggest = get_max_node(*stack);
 	if (biggest == *stack)
 		ra(stack);
 	else if ((*stack)->next == biggest)
@@ -35,12 +35,12 @@ void	sort_stacks(t_node **st_a, t_node **st_b)
 {
 	int	len_a;
 
-	len_a = stack_len(st_a);
-	if (len_a-- > 3 && !is_stack_sorted(st_a))
+	len_a = stack_len(*st_a);
+	if (len_a-- > 3 && !is_stack_sorted(*st_a))
 		pb(st_a, st_b);
-	if (len_a-- > 3 && !is_stack_sorted(st_a))
+	if (len_a-- > 3 && !is_stack_sorted(*st_a))
 		pb(st_a, st_b);
-	while (len_a-- > 3 && !is_stack_sorted(st_a))
+	while (len_a-- > 3 && !is_stack_sorted(*st_a))
 	{
 		prepare_nodes_a(*st_a, *st_b);
 		move_a_to_b(st_a, st_b);
@@ -61,13 +61,13 @@ void	move_min_on_top(t_node **st_a)
 {
 	t_node	*min;
 
-	min = get_min_node(st_a);
+	min = get_min_node(*st_a);
 	while (*st_a != min)
 	{
 		if (min->above_median)
 			ra(st_a);
 		else
 			rra(st_a);
-		min = get_min_node(st_a);
+		min = get_min_node(*st_a);
 	}
 }

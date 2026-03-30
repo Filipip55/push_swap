@@ -65,8 +65,8 @@ void	prep_for_push(t_node **stack, t_node *new_top,
 	while (*stack != new_top)
 	{
 		if (new_top->above_median)
-			f_rr(stack, true);
+			f_rr(stack);
 		else
-			f_rrr(stack, true);
+			f_rrr(stack);
 	}
 }
