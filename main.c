@@ -47,7 +47,7 @@ void	add_node_back(t_node **stack, int n)
 		return (free(stack));
 	new_node = malloc(sizeof(t_node));
 	if (!new_node)
-		return (free(new_node), NULL);
+		free_errors(stack);
 	new_node->next = NULL;
 	new_node->value = n;
 	if(!(*stack))
