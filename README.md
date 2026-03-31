@@ -3,4 +3,6 @@
 primo progettone algoritmico, dovro cambiare questa descrizione piu avanti
 
 TO DO
-controlla type matching tra le funzioni del sorting
+Parte bonus
+Questo README
+eliminare il subject e il checker
