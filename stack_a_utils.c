@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:20:36 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 17:25:43 by icoman           ###   ########.fr       */
+/*   Updated: 2026/03/31 19:37:04 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,6 @@ void	move_a_to_b(t_node **st_a, t_node **st_b)
 	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
 		reverse_keep_rotating(st_a, st_b, cheapest);
 	prep_for_push(st_a, cheapest, &ra, &rra);
-	prep_for_push(st_b, cheapest, &rb, &rrb);
+	prep_for_push(st_b, cheapest->target, &rb, &rrb);
 	pb(st_a, st_b);
 }
