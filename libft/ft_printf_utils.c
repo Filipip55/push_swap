@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 16:51:01 by icoman            #+#    #+#             */
-/*   Updated: 2026/02/27 16:56:25 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/01 22:00:54 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	put_str(char *s)
 	return (i);
 }
 
-int put_hex(unsigned int n, char format)
+int	put_hex(unsigned int n, char format)
 {
 	int		count;
 	char	*base;
@@ -40,7 +40,7 @@ int put_hex(unsigned int n, char format)
 
 int	put_nbr(long n)
 {
-	int	char_count;
+	int		char_count;
 	char	c;
 
 	char_count = 0;
@@ -57,27 +57,27 @@ int	put_nbr(long n)
 	return (char_count + 1);
 }
 
-int ptr_to_hex(unsigned long long n)
+int	ptr_to_hex(unsigned long long n)
 {
-    int     char_count;
-    char    *cifrario;
+	int		char_count;
+	char	*cifrario;
 
-    char_count = 0;
-    cifrario = "0123456789abcdef";
-    if (n >= 16)
-        char_count += ptr_to_hex(n / 16);
-    write(1, &cifrario[n % 16], 1);
-    return (char_count + 1);
+	char_count = 0;
+	cifrario = "0123456789abcdef";
+	if (n >= 16)
+		char_count += ptr_to_hex(n / 16);
+	write(1, &cifrario[n % 16], 1);
+	return (char_count + 1);
 }
 
 int	put_ptr(unsigned long long ptr)
 {
-    int char_count;
+	int	char_count;
 
-    char_count = 0;
-    if (ptr == 0)
-        return (write(1, "(nil)", 5));
-    char_count += write(1, "0x", 2);
-    char_count += ptr_to_hex(ptr);
-    return (char_count);
+	char_count = 0;
+	if (ptr == 0)
+		return (write(1, "(nil)", 5));
+	char_count += write(1, "0x", 2);
+	char_count += ptr_to_hex(ptr);
+	return (char_count);
 }

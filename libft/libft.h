@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:30:56 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/01 18:39:49 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/01 22:18:29 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 // Funzioni di conversione
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
-long		ft_atol(const char *nptr);
+long	ft_atol(const char *nptr);
 
 /* // Funzioni per le liste
 t_list	*ft_lstnew(int n);
@@ -80,11 +80,11 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *)); */
 
 // Funzioni per ft_printf
-int	ft_printf(const char *str, int print_word_counter, ...);
-int	put_str(char *s);
-int	put_hex(unsigned int n, char format);
-int	put_ptr(unsigned long long ptr);
-int	ptr_to_hex(unsigned long long n);
-int	put_nbr(long n);
+int		ft_printf(const char *str, int print_word_counter, ...);
+int		put_str(char *s);
+int		put_hex(unsigned int n, char format);
+int		put_ptr(unsigned long long ptr);
+int		ptr_to_hex(unsigned long long n);
+int		put_nbr(long n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:49:29 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 17:37:52 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/01 21:58:25 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,29 +28,29 @@
 	next e prev -> puntano al nodo successivo e precedente */
 typedef struct s_node
 {
-    int             value;
-    int             index;
-    int             push_cost;
-    bool            is_cheapest;
-    bool            above_median;
-    struct s_node   *target;
-    struct s_node   *next;
-}   t_node;
+	int				value;
+	int				index;
+	int				push_cost;
+	bool			is_cheapest;
+	bool			above_median;
+	struct s_node	*target;
+	struct s_node	*next;
+}	t_node;
 
 void	add_node_back(t_node **stack, int n);
 
 // sorting
-void		sort_stacks(t_node **st_a, t_node **st_b);
+void	sort_stacks(t_node **st_a, t_node **st_b);
 void	move_min_on_top(t_node **st_a);
-void		sort_three(t_node **stack);
+void	sort_three(t_node **stack);
 
 // sorting utils
-void		update_index(t_node *stack);
-void		set_cheapest(t_node *stack);
-void		prep_for_push(t_node **stack, t_node *new_top,
-						void (*f_rr)(t_node **),
-						void (*f_rrr)(t_node **));
-bool		check_sintax(char *arg);
+void	update_index(t_node *stack);
+void	set_cheapest(t_node *stack);
+void	prep_for_push(t_node **stack, t_node *new_top,
+			void (*f_rr)(t_node **),
+			void (*f_rrr)(t_node **));
+bool	check_sintax(char *arg);
 
 // error management
 bool	check_sintax(char *str_n);
@@ -59,47 +59,47 @@ void	free_stack(t_node **stack);
 void	free_errors(t_node **stack);
 
 // common stack utils
-int 		stack_len(t_node *stack);
-bool 		is_stack_sorted(t_node *stack);
-t_node		*get_cheapest(t_node *stack);
-t_node		*get_min_node(t_node *stack);
-t_node		*get_max_node(t_node *stack);
+int		stack_len(t_node *stack);
+bool	is_stack_sorted(t_node *stack);
+t_node	*get_cheapest(t_node *stack);
+t_node	*get_min_node(t_node *stack);
+t_node	*get_max_node(t_node *stack);
 
 // stack A utils
-void		init_stack_a(t_node **st_a, char **argv);
-void		prepare_nodes_a(t_node *st_a, t_node *st_b);
-void		set_target_a(t_node *st_a, t_node *st_b);
-void		set_cost_a(t_node *st_a, t_node *st_b);
-void		move_a_to_b(t_node **st_a, t_node **st_b);
+void	init_stack_a(t_node **st_a, char **argv);
+void	prepare_nodes_a(t_node *st_a, t_node *st_b);
+void	set_target_a(t_node *st_a, t_node *st_b);
+void	set_cost_a(t_node *st_a, t_node *st_b);
+void	move_a_to_b(t_node **st_a, t_node **st_b);
 
 // stack B utils
-void		prepare_nodes_b(t_node *st_a, t_node *st_b);
-void		set_target_b(t_node *st_a, t_node *st_b);
+void	prepare_nodes_b(t_node *st_a, t_node *st_b);
+void	set_target_b(t_node *st_a, t_node *st_b);
 void	move_b_to_a(t_node **st_a, t_node **st_b);
 
 // swap
-void		swap(t_node **stack);
-void		sa(t_node **stack);
-void		sb(t_node **stack);
-void		ss(t_node **st_a, t_node **st_b);
+void	swap(t_node **stack);
+void	sa(t_node **stack);
+void	sb(t_node **stack);
+void	ss(t_node **st_a, t_node **st_b);
 
 // push
-void		push(t_node **st_a, t_node **st_b);
-void		pa(t_node **st_a, t_node **st_b);
-void		pb(t_node **st_a, t_node **st_b);
+void	push(t_node **st_a, t_node **st_b);
+void	pa(t_node **st_a, t_node **st_b);
+void	pb(t_node **st_a, t_node **st_b);
 
 // rotate
-void		rotate(t_node **stack);
-void		ra(t_node **stack);
-void		rb(t_node **stack);
-void		rr(t_node **st_a, t_node **st_b);
-void		keep_rotating(t_node **st_a, t_node **st_b, t_node *cheapest);
+void	rotate(t_node **stack);
+void	ra(t_node **stack);
+void	rb(t_node **stack);
+void	rr(t_node **st_a, t_node **st_b);
+void	keep_rotating(t_node **st_a, t_node **st_b, t_node *cheapest);
 
 // reverse rotate
-void		reverse_rotate(t_node **stack);
-void		rra(t_node **st_a);
-void		rrb(t_node **st_b);
-void		rrr(t_node **st_a, t_node **st_b);
-void		reverse_keep_rotating(t_node **st_a, t_node **st_b, t_node *cheapest);
+void	reverse_rotate(t_node **stack);
+void	rra(t_node **st_a);
+void	rrb(t_node **st_b);
+void	rrr(t_node **st_a, t_node **st_b);
+void	reverse_keep_rotating(t_node **st_a, t_node **st_b, t_node *cheapest);
 
 #endif

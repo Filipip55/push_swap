@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 18:08:57 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/01 18:39:13 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/01 21:48:18 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	rotate(t_node **stack)
 	t_node	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	last = *stack;
 	while (last->next)
@@ -47,9 +47,11 @@ void	rr(t_node **st_a, t_node **st_b)
 	rotate(st_b);
 	ft_printf("rr\n", false);
 }
+
 /* Esegue rr finche' il nodo piu' economico da spostare di A e' in cima
 	e finche' il suo target node in B non e' in cima
-	da chiamare solo se entrambi i nodi in questione hanno above_median settato a true */
+	da chiamare solo se entrambi i nodi in questione hanno 
+	above_median settato a true */
 void	keep_rotating(t_node **st_a, t_node **st_b, t_node *cheapest)
 {
 	while (*st_a != cheapest && *st_b != cheapest->target)

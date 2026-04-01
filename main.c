@@ -6,12 +6,18 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:58:38 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/01 18:56:59 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/01 22:09:49 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Punto di partenza, per mostare il numero di mosse eseguite 
+	aggiungi queste linee alla fine di questo main
+	
+	ft_printf("Numero di mosse: ", true);
+	ft_printf("\n", false); 
+	*/
 int	main(int argc, char **argv)
 {
 	t_node	*st_a;
@@ -33,8 +39,6 @@ int	main(int argc, char **argv)
 	}
 	free_stack(&st_a);
 	free_stack(&st_b);
-	//ft_printf("Numero di mosse: ", true);
-	//ft_printf("\n", false);
 	return (0);
 }
 

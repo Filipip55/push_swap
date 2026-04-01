@@ -6,14 +6,14 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 16:22:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:06:50 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/01 21:50:52 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* Controlla che i nodi dello stack siano ordinati in ordine crescente */
-bool is_stack_sorted(t_node *stack)
+bool	is_stack_sorted(t_node *stack)
 {
 	t_node	*curr;
 
@@ -30,7 +30,7 @@ bool is_stack_sorted(t_node *stack)
 }
 
 /* Restituisce il numero di nodi in uno stack */
-int stack_len(t_node *stack)
+int	stack_len(t_node *stack)
 {
 	int		len;
 	t_node	*curr;

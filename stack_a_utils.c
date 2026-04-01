@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:20:36 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/31 19:37:04 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/01 21:50:08 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 	e controlla la presenza di eventuali errori su quest'ultimi */
 void	init_stack_a(t_node **st_a, char **argv)
 {
-	long n;
-	int i;
+	long	n;
+	int		i;
 
 	i = 1;
 	while (argv[i])
