@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 18:08:57 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:40:13 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/01 18:39:13 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@ void	rotate(t_node **stack)
 void	ra(t_node **stack)
 {
 	rotate(stack);
-	ft_printf("ra\n");
+	ft_printf("ra\n", false);
 }
 
 void	rb(t_node **stack)
 {
 	rotate(stack);
-	ft_printf("rb\n");
+	ft_printf("rb\n", false);
 }
 
 void	rr(t_node **st_a, t_node **st_b)
 {
 	rotate(st_a);
 	rotate(st_b);
-	ft_printf("rr\n");
+	ft_printf("rr\n", false);
 }
 /* Esegue rr finche' il nodo piu' economico da spostare di A e' in cima
 	e finche' il suo target node in B non e' in cima

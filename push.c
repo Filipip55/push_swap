@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:44:58 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 15:27:35 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/01 18:38:17 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ void	push(t_node **dest, t_node **src)
 void	pa(t_node **st_a, t_node **st_b)
 {
 	push(st_a, st_b);
-	ft_printf("pa\n");
+	ft_printf("pa\n", false);
 }
 
 /* Prende il primo elemento in cima ad A e lo mette in cima a B. */
 void	pb(t_node **st_a, t_node **st_b)
 {
 	push(st_b, st_a);
-	ft_printf("pb\n");
+	ft_printf("pb\n", false);
 }

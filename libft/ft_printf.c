@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:52:50 by filip             #+#    #+#             */
-/*   Updated: 2026/02/27 16:56:15 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/01 18:51:32 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ int	check_formatters(va_list args, const char *str, int i)
 	return (count);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(const char *str, int print_word_counter, ...)
 {
+	static int	words_printed;
  	va_list args;
 	int	i;
 	int	char_count;
@@ -52,7 +53,7 @@ int	ft_printf(const char *str, ...)
 		return (-1);
 	i = 0;
 	char_count = 0;
-	va_start(args, str);
+	va_start(args, print_word_counter);
 	while (i < (int)ft_strlen(str))
 	{
 		if (str[i] == '%')
@@ -64,5 +65,9 @@ int	ft_printf(const char *str, ...)
 			char_count += write(1, &str[i++], 1);
 	}
 	va_end(args);
+	if (print_word_counter)
+		put_nbr(words_printed);
+	else
+		words_printed++;
 	return (char_count);
 }
