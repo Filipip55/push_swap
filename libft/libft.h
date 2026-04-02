@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:30:56 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/01 22:18:29 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/02 13:37:28 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *)); */
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *)); 
+*/
 
 // Funzioni per ft_printf
 int		ft_printf(const char *str, int print_word_counter, ...);
