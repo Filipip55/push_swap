@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:58:38 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/03 17:35:19 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 21:42:49 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,29 +40,4 @@ int	main(int argc, char **argv)
 	free_stack(&st_a);
 	free_stack(&st_b);
 	return (0);
-}
-
-/*  Crea un nuovo nodo e lo mette nell'ultima posizione (coda).
-	Se lo stack e' vuoto allora lo mette in testa */
-void	add_node_back(t_node **stack, int n)
-{
-	t_node	*new_node;
-	t_node	*last_node;
-
-	if (!stack)
-		return ;
-	new_node = malloc(sizeof(t_node));
-	if (!new_node)
-		free_errors(stack);
-	new_node->next = NULL;
-	new_node->value = n;
-	if (!(*stack))
-		*stack = new_node;
-	else
-	{
-		last_node = *stack;
-		while (last_node->next)
-			last_node = last_node->next;
-		last_node->next = new_node;
-	}
 }

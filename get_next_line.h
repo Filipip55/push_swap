@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 18:02:23 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/02 14:17:53 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 21:32:19 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ char	*extract_line(char *stash);
 char	*update_buffer(char *stash);
 void	remove_node(t_list **lst, int fd);
 char	*search_newline(char *s);
-int		ft_strlen(char *s);
+int		ft_new_strlen(char *s);
 
 #endif

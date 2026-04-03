@@ -6,7 +6,7 @@
 #    By: icoman <icoman@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 16:43:31 by icoman            #+#    #+#              #
-#    Updated: 2026/04/03 17:10:13 by icoman           ###   ########.fr        #
+#    Updated: 2026/04/03 21:39:47 by icoman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS_MAN    = main.c
 OBJS_MAN    = $(SRCS_MAN:.c=.o)
 
 # File specifico per il bonus
-SRCS_BONUS  = checker.c
+SRCS_BONUS  = checker.c get_next_line.c get_next_line_utils.c
 OBJS_BONUS  = $(SRCS_BONUS:.c=.o)
 
 all: $(NAME)

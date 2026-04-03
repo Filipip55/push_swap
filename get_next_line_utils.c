@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 18:02:12 by icoman            #+#    #+#             */
-/*   Updated: 2026/02/13 00:03:28 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 21:32:31 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ char	*search_newline(char *s)
 }
 
 /* mi devi davvero leggere? */
-int	ft_strlen(char *s)
+int	ft_new_strlen(char *s)
 {
 	int	len;
 
