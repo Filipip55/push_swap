@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 21:46:38 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/03 17:31:43 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 21:48:25 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	rrr(t_node **st_a, t_node **st_b, bool printable)
 	reverse_rotate(st_a);
 	reverse_rotate(st_b);
 	if (printable)
-		ft_printf("rrr\n", false);}
+		ft_printf("rrr\n", false);
+}
 
 /* Esegue rrr finche' il nodo piu' economico da spostare di A e' in cima
 	e finche' il suo target node in B non e' in cima
