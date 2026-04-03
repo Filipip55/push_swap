@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 21:22:15 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 17:32:18 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 17:36:04 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	sort_three(t_node **stack)
 
 	biggest = get_max_node(*stack);
 	if (biggest == *stack)
-		ra(stack);
+		ra(stack, true);
 	else if ((*stack)->next == biggest)
-		rra(stack);
+		rra(stack, true);
 	if ((*stack)->value > (*stack)->next->value)
-		sa(stack);
+		sa(stack, true);
 }
 
 void	sort_stacks(t_node **st_a, t_node **st_b)
@@ -37,9 +37,9 @@ void	sort_stacks(t_node **st_a, t_node **st_b)
 
 	len_a = stack_len(*st_a);
 	if (len_a-- > 3 && !is_stack_sorted(*st_a))
-		pb(st_a, st_b);
+		pb(st_a, st_b, true);
 	if (len_a-- > 3 && !is_stack_sorted(*st_a))
-		pb(st_a, st_b);
+		pb(st_a, st_b, true);
 	while (len_a-- > 3 && !is_stack_sorted(*st_a))
 	{
 		prepare_nodes_a(*st_a, *st_b);
@@ -65,9 +65,9 @@ void	move_min_on_top(t_node **st_a)
 	while (*st_a != min)
 	{
 		if (min->above_median)
-			ra(st_a);
+			ra(st_a, true);
 		else
-			rra(st_a);
+			rra(st_a, true);
 		min = get_min_node(*st_a);
 	}
 }

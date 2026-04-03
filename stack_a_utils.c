@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:20:36 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/01 21:50:08 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 17:36:21 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,5 @@ void	move_a_to_b(t_node **st_a, t_node **st_b)
 		reverse_keep_rotating(st_a, st_b, cheapest);
 	prep_for_push(st_a, cheapest, &ra, &rra);
 	prep_for_push(st_b, cheapest->target, &rb, &rrb);
-	pb(st_a, st_b);
+	pb(st_a, st_b, true);
 }

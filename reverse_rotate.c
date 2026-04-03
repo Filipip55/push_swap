@@ -6,11 +6,9 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 21:46:38 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/01 21:48:49 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 17:31:43 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "push_swap.h"
 
 #include "push_swap.h"
 
@@ -34,24 +32,26 @@ void	reverse_rotate(t_node **stack)
 	*stack = last;
 }
 
-void	rra(t_node **st_a)
+void	rra(t_node **st_a, bool printable)
 {
 	reverse_rotate(st_a);
-	ft_printf("rra\n", false);
+	if (printable)
+		ft_printf("rra\n", false);
 }
 
-void	rrb(t_node **st_b)
+void	rrb(t_node **st_b, bool printable)
 {
 	reverse_rotate(st_b);
-	ft_printf("rrb\n", false);
+	if (printable)
+		ft_printf("rrb\n", false);
 }
 
-void	rrr(t_node **st_a, t_node **st_b)
+void	rrr(t_node **st_a, t_node **st_b, bool printable)
 {
 	reverse_rotate(st_a);
 	reverse_rotate(st_b);
-	ft_printf("rrr\n", false);
-}
+	if (printable)
+		ft_printf("rrr\n", false);}
 
 /* Esegue rrr finche' il nodo piu' economico da spostare di A e' in cima
 	e finche' il suo target node in B non e' in cima
@@ -60,7 +60,7 @@ void	rrr(t_node **st_a, t_node **st_b)
 void	reverse_keep_rotating(t_node **st_a, t_node **st_b, t_node *cheapest)
 {
 	while (*st_a != cheapest && *st_b != cheapest->target)
-		rrr(st_a, st_b);
+		rrr(st_a, st_b, true);
 	update_index(*st_a);
 	update_index(*st_b);
 }

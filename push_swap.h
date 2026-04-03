@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:49:29 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/01 21:58:25 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 17:45:07 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	sort_three(t_node **stack);
 void	update_index(t_node *stack);
 void	set_cheapest(t_node *stack);
 void	prep_for_push(t_node **stack, t_node *new_top,
-			void (*f_rr)(t_node **),
-			void (*f_rrr)(t_node **));
+			void (*f_rr)(t_node **, bool),
+			void (*f_rrr)(t_node **, bool));
 bool	check_sintax(char *arg);
 
 // error management
@@ -79,27 +79,27 @@ void	move_b_to_a(t_node **st_a, t_node **st_b);
 
 // swap
 void	swap(t_node **stack);
-void	sa(t_node **stack);
-void	sb(t_node **stack);
-void	ss(t_node **st_a, t_node **st_b);
+void	sa(t_node **stack, bool printable);
+void	sb(t_node **stack, bool printable);
+void	ss(t_node **st_a, t_node **st_b, bool printable);
 
 // push
 void	push(t_node **st_a, t_node **st_b);
-void	pa(t_node **st_a, t_node **st_b);
-void	pb(t_node **st_a, t_node **st_b);
+void	pa(t_node **st_a, t_node **st_b, bool printable);
+void	pb(t_node **st_a, t_node **st_b, bool printable);
 
 // rotate
 void	rotate(t_node **stack);
-void	ra(t_node **stack);
-void	rb(t_node **stack);
-void	rr(t_node **st_a, t_node **st_b);
+void	ra(t_node **stack, bool printable);
+void	rb(t_node **stack, bool printable);
+void	rr(t_node **st_a, t_node **st_b, bool printable);
 void	keep_rotating(t_node **st_a, t_node **st_b, t_node *cheapest);
 
 // reverse rotate
 void	reverse_rotate(t_node **stack);
-void	rra(t_node **st_a);
-void	rrb(t_node **st_b);
-void	rrr(t_node **st_a, t_node **st_b);
+void	rra(t_node **st_a, bool printable);
+void	rrb(t_node **st_b, bool printable);
+void	rrr(t_node **st_a, t_node **st_b, bool printable);
 void	reverse_keep_rotating(t_node **st_a, t_node **st_b, t_node *cheapest);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:04:52 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/01 18:39:22 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 17:34:36 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,24 @@ void	swap(t_node **stack)
 	*stack = second;
 }
 
-void	sa(t_node **stack)
+void	sa(t_node **stack, bool printable)
 {
 	swap(stack);
-	ft_printf("sa\n", false);
+	if (printable)
+		ft_printf("sa\n", false);
 }
 
-void	sb(t_node **stack)
+void	sb(t_node **stack, bool printable)
 {
 	swap(stack);
-	ft_printf("sb\n", false);
+	if (printable)
+		ft_printf("sb\n", false);
 }
 
-void	ss(t_node **st_a, t_node **st_b)
+void	ss(t_node **st_a, t_node **st_b, bool printable)
 {
 	swap(st_a);
 	swap(st_b);
-	ft_printf("ss\n", false);
+	if (printable)
+		ft_printf("ss\n", false);
 }

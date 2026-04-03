@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 18:08:57 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/01 21:48:18 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 17:33:38 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,26 @@ void	rotate(t_node **stack)
 	first->next = NULL;
 }
 
-void	ra(t_node **stack)
+void	ra(t_node **stack, bool printable)
 {
 	rotate(stack);
-	ft_printf("ra\n", false);
+	if (printable)
+		ft_printf("ra\n", false);
 }
 
-void	rb(t_node **stack)
+void	rb(t_node **stack, bool printable)
 {
 	rotate(stack);
-	ft_printf("rb\n", false);
+	if (printable)
+		ft_printf("rb\n", false);
 }
 
-void	rr(t_node **st_a, t_node **st_b)
+void	rr(t_node **st_a, t_node **st_b, bool printable)
 {
 	rotate(st_a);
 	rotate(st_b);
-	ft_printf("rr\n", false);
+	if (printable)
+		ft_printf("rr\n", false);
 }
 
 /* Esegue rr finche' il nodo piu' economico da spostare di A e' in cima
@@ -55,7 +58,7 @@ void	rr(t_node **st_a, t_node **st_b)
 void	keep_rotating(t_node **st_a, t_node **st_b, t_node *cheapest)
 {
 	while (*st_a != cheapest && *st_b != cheapest->target)
-		rr(st_a, st_b);
+		rr(st_a, st_b, true);
 	update_index(*st_a);
 	update_index(*st_b);
 }

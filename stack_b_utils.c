@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 22:32:17 by icoman            #+#    #+#             */
-/*   Updated: 2026/03/28 17:32:06 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 17:36:29 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ void	set_target_b(t_node *st_a, t_node *st_b)
 void	move_b_to_a(t_node **st_a, t_node **st_b)
 {
 	prep_for_push(st_a, (*st_b)->target, &ra, &rra);
-	pa(st_a, st_b);
+	pa(st_a, st_b, true);
 }
