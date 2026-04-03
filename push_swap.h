@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:49:29 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/03 17:45:07 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 21:53:54 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ typedef struct s_node
 	struct s_node	*target;
 	struct s_node	*next;
 }	t_node;
-
-void	add_node_back(t_node **stack, int n);
 
 // sorting
 void	sort_stacks(t_node **st_a, t_node **st_b);
@@ -76,6 +74,7 @@ void	move_a_to_b(t_node **st_a, t_node **st_b);
 void	prepare_nodes_b(t_node *st_a, t_node *st_b);
 void	set_target_b(t_node *st_a, t_node *st_b);
 void	move_b_to_a(t_node **st_a, t_node **st_b);
+void	add_node_back(t_node **stack, int n);
 
 // swap
 void	swap(t_node **stack);

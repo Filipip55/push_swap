@@ -6,7 +6,7 @@
 /*   By: icoman <icoman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 21:22:15 by icoman            #+#    #+#             */
-/*   Updated: 2026/04/03 17:36:04 by icoman           ###   ########.fr       */
+/*   Updated: 2026/04/03 22:49:06 by icoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sort_three(t_node **stack)
 	if ((*stack)->value > (*stack)->next->value)
 		sa(stack, true);
 }
-
+/* pb due volte per poter calcolare il costo dello spostamento in B, altrimenti  */
 void	sort_stacks(t_node **st_a, t_node **st_b)
 {
 	int	len_a;
